@@ -1,2 +1,2 @@
 export * from './class-with-providers';
-export * from './run-in-context';
+export * from './run-fn-in-context';
