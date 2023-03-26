@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
+import { injectHttpClient } from '../di-functions';
 import { Character } from '../types';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Character } from '../types';
 export class CharacterFacadeService {
   private readonly _characters$$ = new BehaviorSubject<Character[]>([]);
   characters$ = this._characters$$.asObservable();
-  private readonly _http = inject(HttpClient);
+  private readonly _http = injectHttpClient();
 
   setCharacters(characters: Character[]) {
     this._characters$$.next(characters);

@@ -1,1 +1,1 @@
-export * from './get-character';
+export * from './inject-http-client';
