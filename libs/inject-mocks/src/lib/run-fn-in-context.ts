@@ -5,7 +5,7 @@ import {
   Provider,
 } from '@angular/core';
 
-export const runInContext = (providers: Provider[]) => {
+export const runFnInContext = (providers: Provider[]) => {
   const injector = createEnvironmentInjector(
     providers,
     Injector.create({ providers: [] }) as EnvironmentInjector
