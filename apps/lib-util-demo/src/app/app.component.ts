@@ -1,11 +1,11 @@
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { Component } from '@angular/core';
+import { CharactersComponent } from './components';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent],
+  imports: [CharactersComponent],
   selector: 'ngx-inject-mocks-root',
-  template: ` <ngx-inject-mocks-nx-welcome></ngx-inject-mocks-nx-welcome> `,
+  template: ` <ngx-inject-mocks-demo></ngx-inject-mocks-demo> `,
   styles: [],
 })
 export class AppComponent {
