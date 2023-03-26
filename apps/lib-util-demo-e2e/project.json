@@ -1,19 +1,19 @@
 {
-  "name": "widgets-e2e",
+  "name": "lib-util-demo-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/widgets-e2e/src",
+  "sourceRoot": "apps/lib-util-demo-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/widgets-e2e/cypress.config.ts",
-        "devServerTarget": "widgets:serve:development",
+        "cypressConfig": "apps/lib-util-demo-e2e/cypress.config.ts",
+        "devServerTarget": "lib-util-demo:serve:development",
         "testingType": "e2e"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "widgets:serve:production"
+          "devServerTarget": "lib-util-demo:serve:production"
         }
       }
     },
@@ -21,10 +21,10 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/widgets-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/lib-util-demo-e2e/**/*.{js,ts}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["widgets"]
+  "implicitDependencies": ["lib-util-demo"]
 }

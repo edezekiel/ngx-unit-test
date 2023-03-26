@@ -1,22 +1,25 @@
 {
-  "name": "widgets",
+  "name": "lib-util-demo",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/widgets/src",
+  "sourceRoot": "apps/lib-util-demo/src",
   "prefix": "ngx-inject-mocks",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/widgets",
-        "index": "apps/widgets/src/index.html",
-        "main": "apps/widgets/src/main.ts",
+        "outputPath": "dist/apps/lib-util-demo",
+        "index": "apps/lib-util-demo/src/index.html",
+        "main": "apps/lib-util-demo/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/widgets/tsconfig.app.json",
+        "tsConfig": "apps/lib-util-demo/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/widgets/src/favicon.ico", "apps/widgets/src/assets"],
-        "styles": ["apps/widgets/src/styles.scss"],
+        "assets": [
+          "apps/lib-util-demo/src/favicon.ico",
+          "apps/lib-util-demo/src/assets"
+        ],
+        "styles": ["apps/lib-util-demo/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -50,10 +53,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "widgets:build:production"
+          "browserTarget": "lib-util-demo:build:production"
         },
         "development": {
-          "browserTarget": "widgets:build:development"
+          "browserTarget": "lib-util-demo:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -61,21 +64,24 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "widgets:build"
+        "browserTarget": "lib-util-demo:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/widgets/**/*.ts", "apps/widgets/**/*.html"]
+        "lintFilePatterns": [
+          "apps/lib-util-demo/**/*.ts",
+          "apps/lib-util-demo/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/widgets/jest.config.ts",
+        "jestConfig": "apps/lib-util-demo/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
