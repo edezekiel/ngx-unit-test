@@ -8,8 +8,8 @@ import {
   mockGuard,
   mockInterceptor,
   mockResolver,
+  MOCK_TOKEN,
 } from './__mocks__';
-import MOCK_TOKEN from './__mocks__/mock.token';
 
 describe('runFnInContext', () => {
   it('should inject mocks into a DI function', () => {
@@ -48,11 +48,11 @@ describe('runFnInContext', () => {
   it('should inject mocks into a Resolver', () => {
     const tokenMock = '🕊️';
     const providers = [{ provide: MOCK_TOKEN, useValue: tokenMock }];
-    const route = new ActivatedRouteSnapshot()
+    const route = new ActivatedRouteSnapshot();
     const state = { url: '', root: route };
     // Act
-    const result = runFnInContext(providers)(() => mockResolver(route, state))
+    const result = runFnInContext(providers)(() => mockResolver(route, state));
     // Assert
-    expect(result).toBe(false)
-  })
+    expect(result).toBe(false);
+  });
 });

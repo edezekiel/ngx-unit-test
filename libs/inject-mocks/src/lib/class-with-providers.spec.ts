@@ -1,13 +1,13 @@
 import { ChangeDetectorRef } from '@angular/core';
+import { classWithProviders } from './';
 import {
   MockClass,
   MockComponent,
   MockDirective,
   MockPipe,
   MockService,
+  MOCK_TOKEN
 } from './__mocks__';
-import { classWithProviders } from './';
-import MOCK_TOKEN from './__mocks__/mock.token';
 
 describe('classWithProviders', () => {
   it('should inject mocks into a Component', () => {
@@ -59,14 +59,14 @@ describe('classWithProviders', () => {
   it('should inject mocks into a Service', () => {
     // Arrange
     const emoji = '🦅';
-    const classMock = { emoji }
+    const classMock = { emoji };
     const service = classWithProviders({
       token: MockService,
-      providers: [{provide: MockClass, useValue: classMock}]
-    })
+      providers: [{ provide: MockClass, useValue: classMock }],
+    });
     // Act
     const result = service.emoji;
     // Assert
-    expect(result).toBe(emoji)
-  })
+    expect(result).toBe(emoji);
+  });
 });

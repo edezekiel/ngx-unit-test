@@ -1,5 +1,5 @@
 import { Directive, inject } from '@angular/core';
-import MOCK_TOKEN from './mock.token';
+import { MOCK_TOKEN } from './';
 
 @Directive({
   selector: '[ngxInjectMocksMock]',
@@ -9,6 +9,6 @@ export class MockDirective {
   private readonly _emoji = inject(MOCK_TOKEN);
 
   get emoji() {
-    return this._emoji
+    return this._emoji;
   }
 }
