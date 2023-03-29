@@ -1,5 +1,5 @@
 import { ChangeDetectorRef } from '@angular/core';
-import { classWithProviders } from './';
+import { classWithProviders } from '@ngx-test/inject-mocks';
 import {
   MockClass,
   MockComponent,
@@ -7,7 +7,7 @@ import {
   MockPipe,
   MockService,
   MOCK_TOKEN
-} from './__mocks__';
+} from './';
 
 describe('classWithProviders', () => {
   it('should inject mocks into a Component', () => {

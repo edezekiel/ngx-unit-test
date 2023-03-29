@@ -9,7 +9,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "ngxInjectMocks",
+            "prefix": "ngxUnitTest",
             "style": "camelCase"
           }
         ],

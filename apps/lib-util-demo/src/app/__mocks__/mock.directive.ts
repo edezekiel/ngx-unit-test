@@ -2,7 +2,7 @@ import { Directive, inject } from '@angular/core';
 import { MOCK_TOKEN } from './';
 
 @Directive({
-  selector: '[ngxInjectMocksMock]',
+  selector: '[ngxUnitTestMock]',
   standalone: true,
 })
 export class MockDirective {
