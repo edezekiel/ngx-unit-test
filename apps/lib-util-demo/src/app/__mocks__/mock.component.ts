@@ -9,7 +9,7 @@ import { injectChangeDetectorRef } from './mock-di-function';
 import { MockService } from './mock.service';
 
 @Component({
-  selector: 'ngx-inject-mocks-mock',
+  selector: 'ngx-unit-test-mock',
   standalone: true,
   imports: [CommonModule],
   template: ` <p>mock works!</p> `,

@@ -1,15 +1,15 @@
 import { HttpHandlerFn, HttpRequest } from '@angular/common/http';
 import { ChangeDetectorRef } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
+import { runFnInContext } from '@ngx-test/inject-mocks';
 import { of } from 'rxjs';
-import { runFnInContext } from './run-fn-in-context';
 import {
   injectChangeDetectorRef,
   mockGuard,
   mockInterceptor,
   mockResolver,
   MOCK_TOKEN,
-} from './__mocks__';
+} from './';
 
 describe('runFnInContext', () => {
   it('should inject mocks into a DI function', () => {
