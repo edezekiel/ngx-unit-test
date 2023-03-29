@@ -4,7 +4,7 @@ import { take } from 'rxjs';
 import { CharacterFacadeService } from '../services';
 
 @Component({
-  selector: 'ngx-inject-mocks-demo',
+  selector: 'ngx-unit-test-demo',
   template: `
     <h1>Characters</h1>
     <ul>

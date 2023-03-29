@@ -1,6 +1,7 @@
 {
   "name": "@ngx-unit-test/inject-mocks",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "unit testing library for Angular framework",
   "peerDependencies": {
     "@angular/common": "^15.2.0",
     "@angular/core": "^15.2.0"
@@ -8,5 +9,20 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "license": "MIT",
+  "author": {
+    "name": "Edward Ezekiel",
+    "email": "ed.a.ezekiel@gmail.com",
+    "url": "https://edezekiel.com"
+  },
+  "keywords": [
+    "angular",
+    "unit test",
+    "testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edezekiel/ngx-unit-test"
+  }
 }
