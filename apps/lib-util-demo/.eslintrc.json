@@ -17,7 +17,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "ngx-inject-mocks",
+            "prefix": "ngx-unit-test",
             "style": "kebab-case"
           }
         ]

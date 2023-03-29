@@ -4,8 +4,8 @@ import { CharactersComponent } from './components';
 @Component({
   standalone: true,
   imports: [CharactersComponent],
-  selector: 'ngx-inject-mocks-root',
-  template: ` <ngx-inject-mocks-demo></ngx-inject-mocks-demo> `,
+  selector: 'ngx-unit-test-root',
+  template: ` <ngx-unit-test-demo></ngx-unit-test-demo> `,
   styles: [],
 })
 export class AppComponent {

@@ -1,6 +1,6 @@
 {
-  "name": "ngx-inject-mocks",
-  "version": "0.0.0",
+  "name": "ngx-unit-test",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {},
   "dependencies": {
