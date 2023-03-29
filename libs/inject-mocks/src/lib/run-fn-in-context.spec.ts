@@ -37,9 +37,11 @@ describe('runFnInContext', () => {
     const tokenMock = '🦉';
     const providers = [{ provide: MOCK_TOKEN, useValue: tokenMock }];
     const req = { headers: { append: jest.fn() } };
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
     const next = (req: HttpRequest<any>) => of({});
     // Act
     runFnInContext(providers)(() =>
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       mockInterceptor(req as any, next as HttpHandlerFn)
     );
     // Assert
