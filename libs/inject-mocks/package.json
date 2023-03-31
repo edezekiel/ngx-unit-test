@@ -1,6 +1,6 @@
 {
   "name": "@ngx-unit-test/inject-mocks",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "unit testing library for Angular framework",
   "peerDependencies": {
     "@angular/common": "^15.2.0",
