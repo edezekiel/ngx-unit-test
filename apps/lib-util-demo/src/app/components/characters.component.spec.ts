@@ -1,24 +1,33 @@
 import { classWithProviders } from '@ngx-test/inject-mocks';
-import { BehaviorSubject } from 'rxjs';
 import { CharacterFacadeService } from '../services';
 import { CharactersComponent } from './characters.component';
+import { firstValueFrom, of } from 'rxjs';
 
 describe('CharactersComponent', () => {
-  let component: CharactersComponent;
-  let facadeMock: Partial<CharacterFacadeService>;
-
-  beforeEach(() => {
-    facadeMock = {
-      characters$: new BehaviorSubject([]),
+  it('should create', () => {
+    const facadeMock = {
       getCharacter: jest.fn(),
     };
-    component = classWithProviders({
+    const component = classWithProviders({
       token: CharactersComponent,
       providers: [{ provide: CharacterFacadeService, useValue: facadeMock }],
     });
-  });
 
-  it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should get a Character', async () => {
+    // Arrange
+    const expected = { id: 1, name: 'mock' };
+    const facadeMock = {
+      getCharacter: () => of(expected),
+    };
+    const component = classWithProviders({
+      token: CharactersComponent,
+      providers: [{ provide: CharacterFacadeService, useValue: facadeMock }],
+    });
+    // Act
+    const result = await firstValueFrom(component.character$);
+    // Assert
+    expect(result).toStrictEqual(expected);
   });
 });
