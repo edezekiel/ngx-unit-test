@@ -16,7 +16,7 @@ describe('runFnInContext', () => {
     // Arrange
     const cdrMock = { detectChanges: jest.fn() };
     const providers = [{ provide: ChangeDetectorRef, useValue: cdrMock }];
-    const cdr = runFnInContext(providers)(() => injectChangeDetectorRef());
+    const cdr = runFnInContext(providers, injectChangeDetectorRef);
     // Act
     cdr.detectChanges();
     // Assert
@@ -28,7 +28,7 @@ describe('runFnInContext', () => {
     const providers = [{ provide: MOCK_TOKEN, useValue: tokenMock }];
     const route = new ActivatedRouteSnapshot();
     const state = { url: '', root: route };
-    const result = runFnInContext(providers)(() => mockGuard(route, state));
+    const result = runFnInContext(providers, () => mockGuard(route, state));
     // Assert
     expect(result).toBe(false);
   });
@@ -40,7 +40,7 @@ describe('runFnInContext', () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
     const next = (req: HttpRequest<any>) => of({});
     // Act
-    runFnInContext(providers)(() =>
+    runFnInContext(providers, () =>
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       mockInterceptor(req as any, next as HttpHandlerFn)
     );
@@ -53,7 +53,7 @@ describe('runFnInContext', () => {
     const route = new ActivatedRouteSnapshot();
     const state = { url: '', root: route };
     // Act
-    const result = runFnInContext(providers)(() => mockResolver(route, state));
+    const result = runFnInContext(providers, () => mockResolver(route, state));
     // Assert
     expect(result).toBe(false);
   });

@@ -8,7 +8,7 @@ describe('injectHttpClient()', () => {
   beforeEach(() => {
     httpMock = { get: jest.fn() };
     const providers = [{ provide: HttpClient, useValue: httpMock }];
-    httpClient = runFnInContext(providers)(() => injectHttpClient());
+    httpClient = runFnInContext(providers, injectHttpClient);
   });
   it('should inject HttpClient', () => {
     expect(httpClient).toBeTruthy;
