@@ -3,12 +3,13 @@ import {
   EnvironmentInjector,
   Injector,
   Provider,
+  runInInjectionContext,
 } from '@angular/core';
 
-export const runFnInContext = (providers: Provider[]) => {
+export const runFnInContext = <T>(providers: Provider[], fn: () => T) => {
   const injector = createEnvironmentInjector(
     providers,
     Injector.create({ providers: [] }) as EnvironmentInjector
   );
-  return injector.runInContext.bind(injector);
+  return runInInjectionContext<T>(injector, fn);
 };
