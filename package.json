@@ -1,6 +1,6 @@
 {
   "name": "ngx-unit-test",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "start": "nx serve lib-util-demo",
