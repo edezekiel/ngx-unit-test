@@ -1,14 +1,11 @@
 {
   "name": "@ngx-unit-test/inject-mocks",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "unit testing library for Angular framework",
   "peerDependencies": {
-    "@angular/common": "^16.0.6",
     "@angular/core": "^16.0.6"
   },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
+  "dependencies": {},
   "sideEffects": false,
   "license": "MIT",
   "author": {

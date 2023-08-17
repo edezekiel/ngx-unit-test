@@ -9,8 +9,7 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/inject-mocks/ng-package.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "project": "libs/inject-mocks/ng-package.json"
       },
       "configurations": {
         "production": {
@@ -42,7 +41,8 @@
       "options": {
         "lintFilePatterns": [
           "libs/inject-mocks/**/*.ts",
-          "libs/inject-mocks/**/*.html"
+          "libs/inject-mocks/**/*.html",
+          "libs/inject-mocks/package.json"
         ]
       }
     }
