@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve lib-util-demo",
     "test": "nx test lib-util-demo",
-    "build": "nx build inject-mocks"
+    "build": "nx build inject-mocks",
+    "publish": "cd dist/libs/inject-mocks && npm publish --access public"
   },
   "dependencies": {
     "@angular/animations": "16.2.1",
