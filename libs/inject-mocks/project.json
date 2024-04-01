@@ -4,13 +4,13 @@
   "projectType": "library",
   "sourceRoot": "libs/inject-mocks/src",
   "prefix": "ngx-inject-mocks",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/inject-mocks/ng-package.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "project": "libs/inject-mocks/ng-package.json"
       },
       "configurations": {
         "production": {
@@ -26,26 +26,12 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/inject-mocks/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "libs/inject-mocks/jest.config.ts"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "libs/inject-mocks/**/*.ts",
-          "libs/inject-mocks/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     }
-  },
-  "tags": []
+  }
 }
