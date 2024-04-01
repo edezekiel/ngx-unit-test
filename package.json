@@ -1,12 +1,12 @@
 {
   "name": "ngx-unit-test",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MIT",
   "scripts": {
     "start": "nx serve lib-util-demo",
     "test": "nx test lib-util-demo",
     "build": "nx build inject-mocks",
-    "publish": "cd dist/libs/inject-mocks && npm publish --access public"
+    "publish": "npx rimraf dist/ && npm run build && cd dist/libs/inject-mocks && npm publish --access public"
   },
   "dependencies": {
     "@angular/animations": "17.3.2",
